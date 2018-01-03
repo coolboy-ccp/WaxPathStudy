@@ -7,6 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import <wax.h>
+#import "ViewController.h"
+#import "ZipArchive.h"
+
+#define wax_file_url @"http://localhost/patch.zip"
 
 @interface AppDelegate ()
 
@@ -16,11 +21,53 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    wax_startWithNil();
+    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    NSString *luoFP = [doc stringByAppendingPathComponent:@"lua"];
+    NSString *pp = [[NSString alloc ] initWithFormat:@"%@/?.lua;%@/?/init.lua;", luoFP, luoFP];
+    setenv(LUA_PATH, [pp UTF8String], 1);
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = [[ViewController alloc] init];
+    [self.window makeKeyAndVisible];
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"BlockExample" ofType:@"lua"];
+//    int i = wax_runLuaFile(path.UTF8String);
+//    if (i) {
+//        NSLog(@"error: %s", lua_tostring(wax_currentLuaState(), -1));
+//    }
+   // [self zipToFile];
     // Override point for customization after application launch.
     return YES;
 }
 
 
+
+- (void)zipToFile {
+   NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:wax_file_url]] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (data) {
+            NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+            NSString *filePath = [doc stringByAppendingString:@"patch.zip"];
+            [data writeToFile:filePath atomically:YES];
+            NSString *luoFP = [doc stringByAppendingPathComponent:@"lua"];
+            NSFileManager *fm = [NSFileManager defaultManager];
+            [fm removeItemAtPath:luoFP error:NULL];
+            BOOL isCreate = [fm createDirectoryAtPath:luoFP withIntermediateDirectories:YES attributes:nil error:NULL];
+            if (isCreate) {
+                ZipArchive *zip = [ZipArchive new];
+                [zip UnzipOpenFile:filePath];
+                [zip UnzipFileTo:luoFP overWrite:YES];
+                NSString *pp = [[NSString alloc ] initWithFormat:@"%@/?.lua;%@/?/init.lua;", luoFP, luoFP];
+                setenv(LUA_PATH, [pp UTF8String], 1);
+                wax_start("patch", nil);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    self.window.rootViewController = [[ViewController alloc] init];
+                    [self.window makeKeyAndVisible];
+                });
+               
+            }
+        }
+    }];
+    [task resume];
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

@@ -13,6 +13,12 @@
 		001742681FF08DC300D097E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001742671FF08DC300D097E7 /* Assets.xcassets */; };
 		0017426B1FF08DC300D097E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001742691FF08DC300D097E7 /* LaunchScreen.storyboard */; };
 		0017426E1FF08DC300D097E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0017426D1FF08DC300D097E7 /* main.m */; };
+		001742851FF0BF7100D097E7 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 0017427D1FF0BF7100D097E7 /* zip.c */; };
+		001742861FF0BF7100D097E7 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 0017427E1FF0BF7100D097E7 /* unzip.c */; };
+		001742871FF0BF7100D097E7 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 0017427F1FF0BF7100D097E7 /* mztools.c */; };
+		001742881FF0BF7100D097E7 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 001742821FF0BF7100D097E7 /* ZipArchive.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		001742891FF0BF7100D097E7 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 001742841FF0BF7100D097E7 /* ioapi.c */; };
+		23A1485A220C6471F0D2B5CF /* libPods-WaxPathStudy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6FE07DBA988EB20C5BE753 /* libPods-WaxPathStudy.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,20 @@
 		0017426A1FF08DC300D097E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0017426C1FF08DC300D097E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0017426D1FF08DC300D097E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0017427A1FF0BF7000D097E7 /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		0017427B1FF0BF7000D097E7 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		0017427C1FF0BF7100D097E7 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
+		0017427D1FF0BF7100D097E7 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		0017427E1FF0BF7100D097E7 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		0017427F1FF0BF7100D097E7 /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		001742801FF0BF7100D097E7 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		001742811FF0BF7100D097E7 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		001742821FF0BF7100D097E7 /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
+		001742831FF0BF7100D097E7 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		001742841FF0BF7100D097E7 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		2C6FE07DBA988EB20C5BE753 /* libPods-WaxPathStudy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WaxPathStudy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		36BFA5B970C3AE1ACE7D23C4 /* Pods-WaxPathStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaxPathStudy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WaxPathStudy/Pods-WaxPathStudy.debug.xcconfig"; sourceTree = "<group>"; };
+		C708A6439BE80993C0D4DAFF /* Pods-WaxPathStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaxPathStudy.release.xcconfig"; path = "Pods/Target Support Files/Pods-WaxPathStudy/Pods-WaxPathStudy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23A1485A220C6471F0D2B5CF /* libPods-WaxPathStudy.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +65,8 @@
 			children = (
 				0017425D1FF08DC300D097E7 /* WaxPathStudy */,
 				0017425C1FF08DC300D097E7 /* Products */,
+				FECC26B299BF3080D005C647 /* Pods */,
+				1BC4DC08F5E22C55CC8A0591 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +81,7 @@
 		0017425D1FF08DC300D097E7 /* WaxPathStudy */ = {
 			isa = PBXGroup;
 			children = (
+				001742791FF0BF6200D097E7 /* zip */,
 				0017425E1FF08DC300D097E7 /* AppDelegate.h */,
 				0017425F1FF08DC300D097E7 /* AppDelegate.m */,
 				001742611FF08DC300D097E7 /* ViewController.h */,
@@ -71,6 +95,41 @@
 			path = WaxPathStudy;
 			sourceTree = "<group>";
 		};
+		001742791FF0BF6200D097E7 /* zip */ = {
+			isa = PBXGroup;
+			children = (
+				001742831FF0BF7100D097E7 /* crypt.h */,
+				001742841FF0BF7100D097E7 /* ioapi.c */,
+				001742801FF0BF7100D097E7 /* ioapi.h */,
+				0017427F1FF0BF7100D097E7 /* mztools.c */,
+				0017427A1FF0BF7000D097E7 /* mztools.h */,
+				0017427E1FF0BF7100D097E7 /* unzip.c */,
+				001742811FF0BF7100D097E7 /* unzip.h */,
+				0017427D1FF0BF7100D097E7 /* zip.c */,
+				0017427B1FF0BF7000D097E7 /* zip.h */,
+				0017427C1FF0BF7100D097E7 /* ZipArchive.h */,
+				001742821FF0BF7100D097E7 /* ZipArchive.mm */,
+			);
+			path = zip;
+			sourceTree = "<group>";
+		};
+		1BC4DC08F5E22C55CC8A0591 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C6FE07DBA988EB20C5BE753 /* libPods-WaxPathStudy.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FECC26B299BF3080D005C647 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				36BFA5B970C3AE1ACE7D23C4 /* Pods-WaxPathStudy.debug.xcconfig */,
+				C708A6439BE80993C0D4DAFF /* Pods-WaxPathStudy.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,9 +137,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 001742711FF08DC300D097E7 /* Build configuration list for PBXNativeTarget "WaxPathStudy" */;
 			buildPhases = (
+				6412B14AABD05C588970FF20 /* [CP] Check Pods Manifest.lock */,
 				001742571FF08DC300D097E7 /* Sources */,
 				001742581FF08DC300D097E7 /* Frameworks */,
 				001742591FF08DC300D097E7 /* Resources */,
+				DB7AFEF6AF370DF654D8A00E /* [CP] Embed Pods Frameworks */,
+				9B625076CFB1CADC59EEC8DA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -137,12 +199,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6412B14AABD05C588970FF20 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WaxPathStudy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B625076CFB1CADC59EEC8DA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WaxPathStudy/Pods-WaxPathStudy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB7AFEF6AF370DF654D8A00E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WaxPathStudy/Pods-WaxPathStudy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		001742571FF08DC300D097E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				001742631FF08DC300D097E7 /* ViewController.m in Sources */,
+				001742861FF0BF7100D097E7 /* unzip.c in Sources */,
+				001742891FF0BF7100D097E7 /* ioapi.c in Sources */,
+				001742881FF0BF7100D097E7 /* ZipArchive.mm in Sources */,
+				001742871FF0BF7100D097E7 /* mztools.c in Sources */,
+				001742851FF0BF7100D097E7 /* zip.c in Sources */,
 				0017426E1FF08DC300D097E7 /* main.m in Sources */,
 				001742601FF08DC300D097E7 /* AppDelegate.m in Sources */,
 			);
@@ -276,6 +394,7 @@
 		};
 		001742721FF08DC300D097E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36BFA5B970C3AE1ACE7D23C4 /* Pods-WaxPathStudy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -289,6 +408,7 @@
 		};
 		001742731FF08DC300D097E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C708A6439BE80993C0D4DAFF /* Pods-WaxPathStudy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,0 +1,21 @@
+PODS:
+  - wax (1.2.1)
+
+DEPENDENCIES:
+  - wax (from `https://github.com/alibaba/wax.git`)
+
+EXTERNAL SOURCES:
+  wax:
+    :git: https://github.com/alibaba/wax.git
+
+CHECKOUT OPTIONS:
+  wax:
+    :commit: 0267d9f895fb605e91a7086b7eb746087b682103
+    :git: https://github.com/alibaba/wax.git
+
+SPEC CHECKSUMS:
+  wax: 85f4b93dbbfa123ee592c458a0ce289d561e4704
+
+PODFILE CHECKSUM: c7cc4297e77bb8d741dde04267e8f2d747e2d6ee
+
+COCOAPODS: 1.3.1

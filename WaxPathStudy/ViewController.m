@@ -16,9 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setMyView];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+
+- (void)setMyView {
+    NSLog(@"%s",__func__);
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
